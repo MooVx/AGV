@@ -90,7 +90,7 @@ class Pgv100:
         self.any_lane = bool(self.raw[1] & 0b00000100)
         self.lanes = (self.raw[1] & 0b00110000) >> 4
 
-        angle = self.raw[11] + self.raw[10] << 7
+        angle = ((self.raw[11] & 0b001111111) + ((self.raw[10] & 0b001111111) << 7))
         if angle > 200:
             self.angle = -(360 - angle)
         else:
