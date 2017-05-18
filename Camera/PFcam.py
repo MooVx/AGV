@@ -1,13 +1,19 @@
-
 import serial
 import serial.rs485
 
 
 class Pgv100:
-
     def __init__(self, address):
-        self.address = address
-        self.lanes = 0
+        self.raw = []  # raw data from camera
+
+        self.address = address  # Address of the read head/camera
+        self.lanes = 0  # Number of lanes in the reading window
+        self.angle = 0  # Absolute angle specification
+        self.dir = 'none'  # direction decision
+        self.any_lane = 0  # Colored lane detected
+        self.pos_x = 0  # Absolute position in the X direction, unsigned
+        self.pos_y = 0  # Absolute position in the Y direction, signed
+
         self.rs485 = serial.Serial(
             port='/dev/ttyS0',
             baudrate=115200,
@@ -16,41 +22,64 @@ class Pgv100:
             bytesize=serial.EIGHTBITS
         )
 
-    def send_req(self, req):
-        self.rs485.write( chr(req + self.address) )
-        self.rs485.write( chr(255 - req - self.address) )
+    class QR:
+        pos_x = 0  # Absolute QR position in the X direction, signed
+        pos_y = 0  # Absolute QR position in the Y direction, signed
+        known = 0  # Associated control code is detected.
+        orient = 'none'  # Orientation control code for lane
+        side = 'none'  # Relative position control code for lane
 
-    def read_from_bus(self, bytes_to_read = 0):
+    def send_req(self, req):
+        self.rs485.write(chr(req + self.address))
+        self.rs485.write(chr(255 - req - self.address))
+
+    def read_from_bus(self, bytes_to_read=0):
+        # Description:  reading data from camera over rs485
+        # Arguments:    number bytes to read
+        # Return:       table of read data
         if bytes_to_read > 0:
             data = self.rs485.read(bytes_to_read)
 
         else:
             data = self.rs485.read_all()
         formatted_data = []
-        for i in xrange(0, len(data)):
+        for i in range(0, len(data)):
             formatted_data.append(ord(data[i]))
 
         return formatted_data
 
     def choose_color(self, color):
-            if color == 'red':
-                self.send_req(128 + 16)
-                return self.read_from_bus(2) == [4, 4]
-            elif color == 'green':
-                self.send_req(128 + 8)
-                return self.read_from_bus(2) == [2, 2]
-            elif color == 'blue':
-                self.send_req(128 + 64 + 4)
-                return self.read_from_bus(2) == [1, 1]
-            else:
-                print 'No color selected'
-                return False
+        if color == 'red':
+            self.send_req(128 + 16)
+            return self.read_from_bus(2) == [4, 4]
+        elif color == 'green':
+            self.send_req(128 + 8)
+            return self.read_from_bus(2) == [2, 2]
+        elif color == 'blue':
+            self.send_req(128 + 64 + 4)
+            return self.read_from_bus(2) == [1, 1]
+        else:
+            print('No color selected')
+            return False
 
     def update(self):
+        # Description:  updating all of variables from camera
+        # Arguments:    none
+        # Return:       raw data - table 21x8
+
         self.send_req(128 + 64 + 8 + self.address)
-        raw = self.read_from_bus(21)
+        self.raw = self.read_from_bus(21)
+        self.any_lane = not self.raw[2] & int('0b00000100')
+        self.lanes = (self.raw[2] & int('0b00110000')) >> 4
 
-        self.lanes = (raw[2] & int('0b00110000')) >> 4
+        self.angle = (self.raw[12] & int('0b00111111')) + ((self.raw[11] & int('0b00111111')) << 6)
+        self.pos_y = (self.raw[8] & int('0b00111111')) + ((self.raw[7] & int('0b00111111')) << 6)
 
+        if self.raw[2] & int('0b00000010'):
+            self.dir = 'left'
+        elif self.raw[2] & int('0b00000001'):
+            self.dir = 'right'
+        else:
+            self.dir = 'none'
 
-        return raw
+        return self.raw
