@@ -9,7 +9,7 @@ class Pgv100:
 
         self.address = address  # Address of the read head/camera
         self.lanes = 0  # Number of lanes in the reading window
-        self.angle = 0  # Absolute angle specification
+        self.angle = 0  # Angle from -60 to 60 degree
         self.dir = 'none'  # direction decision
         self.any_lane = False  # Colored lane detected
         self.pos_x = 0  # Absolute position in the X direction, unsigned
@@ -70,7 +70,7 @@ class Pgv100:
     def choose_dir(self, direction):
         # Description:  send information side of detection
         # Arguments:    dir string 'left','right','ahead'
-        # Return:       False if failure
+        # Return:       none
         if direction == 'left':
             self.send_req(128 + 64 + 32 + 8)
         elif direction == 'ahead':
@@ -90,14 +90,23 @@ class Pgv100:
         self.any_lane = bool(self.raw[1] & 0b00000100)
         self.lanes = (self.raw[1] & 0b00110000) >> 4
 
-        self.angle = (self.raw[11] & 0b00111111) + ((self.raw[10] & 0b00111111) << 6)
+        angle = self.raw[11] + self.raw[10] << 7
+        if angle > 200:
+            self.angle = -(360 - angle)
+        else:
+            self.angle = angle
+
         self.pos_y = (self.raw[7] & 0b00111111) + ((self.raw[6] & 0b00111111) << 6)
 
         if self.raw[1] & 0b00000010:
             self.dir = 'left'
         elif self.raw[1] & 0b00000001:
             self.dir = 'right'
+        elif self.raw[1] & 0b00000011:
+            self.dir = 'ahead'
         else:
             self.dir = 'none'
+
+
 
         return self.raw
