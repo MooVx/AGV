@@ -73,16 +73,12 @@ class Pgv100:
         # Return:       False if failure
         if direction == 'left':
             self.send_req(128 + 64 + 32 + 8)
-            return self.read_from_bus(3) == [0, 2, 2]
         elif direction == 'ahead':
             self.send_req(128 + 64 + 32 + 8 + 4)
-            return self.read_from_bus(3) == [0, 3, 3]
-        elif direction == 'blue':
+        elif direction == 'right':
             self.send_req(128 + 64 + 32 + 4)
-            return self.read_from_bus(3) == [0, 1, 1]
         else:
             print('No direction selected')
-            return False
 
     def update(self):
         # Description:  updating all of variables from camera
