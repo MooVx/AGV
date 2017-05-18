@@ -80,6 +80,14 @@ class Pgv100:
         else:
             print('No direction selected')
 
+    def print(self):
+        print('Number of lanes:     '+str(self.lanes))
+        print('Any lane:            '+str(self.any_lane))
+        print('Direction:           '+str(self.dir))
+        print('Angle:               '+str(self.angle))
+        print('Position Y:          '+str(self.pos_y))
+
+
     def update(self):
         # Description:  updating all of variables from camera
         # Arguments:    none
@@ -96,7 +104,9 @@ class Pgv100:
         else:
             self.angle = angle
 
-        self.pos_y = (self.raw[7] & 0b00111111) + ((self.raw[6] & 0b00111111) << 6)
+        self.pos_y = (self.raw[7] & 0b00011111) + ((self.raw[6] & 0b00111111) << 7)
+        if self.raw[7] & 0b00100000:
+            self.pos_y = -self.pos_y
 
         if self.raw[1] & 0b00000010:
             self.dir = 'left'
@@ -106,7 +116,5 @@ class Pgv100:
             self.dir = 'ahead'
         else:
             self.dir = 'none'
-
-
 
         return self.raw
