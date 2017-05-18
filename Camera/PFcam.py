@@ -1,11 +1,13 @@
-import time
+
 import serial
 import serial.rs485
+
 
 class Pgv100:
 
     def __init__(self, address):
         self.address = address
+        self.lanes = 0
         self.rs485 = serial.Serial(
             port='/dev/ttyS0',
             baudrate=115200,
@@ -25,7 +27,7 @@ class Pgv100:
         else:
             data = self.rs485.read_all()
         formatted_data = []
-        for i in xrange(0, len(data) - 1):
+        for i in xrange(0, len(data)):
             formatted_data.append(ord(data[i]))
 
         return formatted_data
@@ -33,11 +35,22 @@ class Pgv100:
     def choose_color(self, color):
             if color == 'red':
                 self.send_req(128 + 16)
-                return
+                return self.read_from_bus(2) == [4, 4]
             elif color == 'green':
                 self.send_req(128 + 8)
+                return self.read_from_bus(2) == [2, 2]
             elif color == 'blue':
-                self.send_req(128 + 4)
+                self.send_req(128 + 64 + 4)
+                return self.read_from_bus(2) == [1, 1]
             else:
                 print 'No color selected'
-                return - 1
+                return False
+
+    def update(self):
+        self.send_req(128 + 64 + 8 + self.address)
+        raw = self.read_from_bus(21)
+
+        self.lanes = (raw[2] & int('0b00110000')) >> 4
+
+
+        return raw
