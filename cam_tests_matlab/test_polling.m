@@ -9,6 +9,10 @@ while 1
         
         lanes =bitand(msg(2), 48)/16
         angle = msg(12) + msg(11)*128
+        if angle > 200
+            angle=-(360-angle)
+        end
+        
         %disp(fread(s,s.BytesAvailable))
         
     end

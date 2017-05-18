@@ -1,4 +1,4 @@
-s = serial('COM4');
+s = serial('COM5');
 set(s,'BaudRate',115200);
 s.StopBits=1;
 s.Parity='even';

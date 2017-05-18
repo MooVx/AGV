@@ -4,6 +4,7 @@ import serial.rs485
 
 class Pgv100:
     def __init__(self, address):
+        self.QR()
         self.raw = []  # raw data from camera
 
         self.address = address  # Address of the read head/camera
@@ -23,11 +24,12 @@ class Pgv100:
         )
 
     class QR:
-        pos_x = 0  # Absolute QR position in the X direction, signed
-        pos_y = 0  # Absolute QR position in the Y direction, signed
-        known = 0  # Associated control code is detected.
-        orient = 'none'  # Orientation control code for lane
-        side = 'none'  # Relative position control code for lane
+        def __init__(self):
+            self.pos_x = 0  # Absolute QR position in the X direction, signed
+            self.pos_y = 0  # Absolute QR position in the Y direction, signed
+            self.known = 0  # Associated control code is detected.
+            self.orient = 'none'  # Orientation control code for lane
+            self.side = 'none'  # Relative position control code for lane
 
     def send_req(self, req):
         self.rs485.write(chr(req + self.address))
@@ -49,6 +51,9 @@ class Pgv100:
         return formatted_data
 
     def choose_color(self, color):
+        # Description:  send information about detected lines color
+        # Arguments:    color string 'red','blue','green'
+        # Return:       False if failure
         if color == 'red':
             self.send_req(128 + 16)
             return self.read_from_bus(2) == [4, 4]
@@ -60,6 +65,23 @@ class Pgv100:
             return self.read_from_bus(2) == [1, 1]
         else:
             print('No color selected')
+            return False
+
+    def choose_dir(self, direction):
+        # Description:  send information side of detection
+        # Arguments:    dir string 'left','right','ahead'
+        # Return:       False if failure
+        if direction == 'left':
+            self.send_req(128 + 64 + 32 + 8)
+            return self.read_from_bus(3) == [0, 2, 2]
+        elif direction == 'ahead':
+            self.send_req(128 + 64 + 32 + 8 + 4)
+            return self.read_from_bus(3) == [0, 3, 3]
+        elif direction == 'blue':
+            self.send_req(128 + 64 + 32 + 4)
+            return self.read_from_bus(3) == [0, 1, 1]
+        else:
+            print('No direction selected')
             return False
 
     def update(self):
