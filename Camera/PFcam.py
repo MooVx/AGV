@@ -10,7 +10,7 @@ class Pgv100:
         self.lanes = 0  # Number of lanes in the reading window
         self.angle = 0  # Absolute angle specification
         self.dir = 'none'  # direction decision
-        self.any_lane = 0  # Colored lane detected
+        self.any_lane = False  # Colored lane detected
         self.pos_x = 0  # Absolute position in the X direction, unsigned
         self.pos_y = 0  # Absolute position in the Y direction, signed
 
@@ -69,15 +69,15 @@ class Pgv100:
 
         self.send_req(128 + 64 + 8 + self.address)
         self.raw = self.read_from_bus(21)
-        self.any_lane = not self.raw[2] & int('0b00000100')
-        self.lanes = (self.raw[2] & int('0b00110000')) >> 4
+        self.any_lane = bool(self.raw[1] & 0b00000100)
+        self.lanes = (self.raw[1] & 0b00110000) >> 4
 
-        self.angle = (self.raw[12] & int('0b00111111')) + ((self.raw[11] & int('0b00111111')) << 6)
-        self.pos_y = (self.raw[8] & int('0b00111111')) + ((self.raw[7] & int('0b00111111')) << 6)
+        self.angle = (self.raw[11] & 0b00111111) + ((self.raw[10] & 0b00111111) << 6)
+        self.pos_y = (self.raw[7] & 0b00111111) + ((self.raw[6] & 0b00111111) << 6)
 
-        if self.raw[2] & int('0b00000010'):
+        if self.raw[1] & 0b00000010:
             self.dir = 'left'
-        elif self.raw[2] & int('0b00000001'):
+        elif self.raw[1] & 0b00000001:
             self.dir = 'right'
         else:
             self.dir = 'none'

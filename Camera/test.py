@@ -5,13 +5,17 @@ cam = PFcam.Pgv100(
     address=0
 )
 
-print(cam.choose_color('blue'))
+# print(cam.choose_color('blue'))
+cam.send_req(232)
 
-prev = cam.update()
+cam.choose_color('red')
+time.sleep(1)
+while 1 :
+    cam.update()
+    print(cam.pos_y)
+    print(cam.lanes)
+    print(cam.angle)
+    time.sleep(1)
 
-for i in xrange(1, 10000):
-    current = cam.update()
-    if prev != current:
-        print i
-    prev = current
+
 
