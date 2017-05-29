@@ -80,7 +80,7 @@ class Pgv100:
         else:
             print('No direction selected')
 
-    def print(self):
+    def print_all(self):
         print('Number of lanes:     '+str(self.lanes))
         print('Any lane:            '+str(self.any_lane))
         print('Direction:           '+str(self.dir))
