@@ -31,12 +31,16 @@ class STM:
         for i in range(0, len(data)):
             formatted_data.append(ord(data[i]))
         self.raw = formatted_data
-        self.dirL = bool(self.raw[0])
-        self.dirR = bool(self.raw[1])
+        self.dirL = bool(self.raw[0] & 0b00000001)
+        self.dirR = bool(self.raw[1] & 0b00000001)
         self.speedL = 64 * (self.raw[2] + (self.raw[3] << 8)) / 1875
         self.speedR = 64 * (self.raw[4] + (self.raw[5] << 8)) / 1875
         self.n_cntL = self.raw[6] + (self.raw[7] << 8)
+        if self.raw[0] & 0b00000010:
+            self.n_cntL = 65536 - self.n_cntL
         self.n_cntR = self.raw[8] + (self.raw[9] << 8)
+        if self.raw[1] & 0b00000010:
+            self.n_cntR = 65536 - self.n_cntR
         self.battery_12 = self.raw[10] + (self.raw[11] << 8)
         self.battery_24 = self.raw[12] + (self.raw[13] << 8)
 
