@@ -71,7 +71,7 @@ volatile uint16_t eL_Ncnt=0;
 volatile uint8_t tic;
 //other
 
-static uint8_t TX_data[12];
+static uint8_t TX_data[14];
 static uint8_t RX_cmd[2];
 uint16_t Battery[2];
 
@@ -143,13 +143,15 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		TX_data[7]=(uint8_t)eL_Ncnt;
 		TX_data[8]=(uint8_t)(eR_Ncnt >> 8);
 		TX_data[9]=(uint8_t)eR_Ncnt;
-		TX_data[10]=(uint8_t)(Battery[0]>>4);
-		TX_data[11]=(uint8_t)(Battery[1]>>4);
-		HAL_UART_Transmit_IT(&huart2, TX_data,12);
+		TX_data[10]=(uint8_t)(Battery[0]);
+		TX_data[11]=(uint8_t)(Battery[0]>>8);
+		TX_data[12]=(uint8_t)(Battery[1]);
+		TX_data[13]=(uint8_t)(Battery[1]>>8);
+		HAL_UART_Transmit_IT(&huart2, TX_data,14);
 		eR_Ncnt=0;
 		eL_Ncnt=0;
-		HAL_UART_Receive_IT(&huart2, RX_cmd, 2);
 	}
+	HAL_UART_Receive_IT(&huart2, RX_cmd, 2);
 }
 
 /* USER CODE END PFP */

@@ -81,12 +81,11 @@ class Pgv100:
             print('No direction selected')
 
     def print_all(self):
-        print('Number of lanes:     '+str(self.lanes))
-        print('Any lane:            '+str(self.any_lane))
-        print('Direction:           '+str(self.dir))
-        print('Angle:               '+str(self.angle))
-        print('Position Y:          '+str(self.pos_y))
-
+        print('Number of lanes:     ' + str(self.lanes))
+        print('Any lane:            ' + str(self.any_lane))
+        print('Direction:           ' + str(self.dir))
+        print('Angle:               ' + str(self.angle))
+        print('Position Y:          ' + str(self.pos_y))
 
     def update(self):
         # Description:  updating all of variables from camera

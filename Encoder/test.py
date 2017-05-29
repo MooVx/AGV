@@ -5,7 +5,7 @@ stm = STM.STM()
 
 while 1:
     stm.read()
-    print(stm.raw)
+    stm.print_all()
     time.sleep(1)
 
 
