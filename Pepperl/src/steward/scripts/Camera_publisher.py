@@ -7,6 +7,8 @@ pub = rospy.Publisher('Camera_data', Camera, queue_size=10)
 
 rospy.init_node('Camera_publisher')
 
+# rate decribe how often the messege will be send
+# unit - [Hz]
 rate = rospy.Rate(10)
 
 cam = PFcam.Pgv100(
@@ -15,6 +17,7 @@ cam = PFcam.Pgv100(
 cam.choose_color('red')
 cam.choose_dir('ahead')
 
+# This publisher will work as long as ROS
 while not rospy.is_shutdown():
     msg = Camera()
     msg.dir = 'Camera is working'
