@@ -1,4 +1,4 @@
-20:13:13 **** Incremental Build of configuration Release for project encoder ****
+20:23:06 **** Incremental Build of configuration Release for project encoder ****
 make all 
 'Building file: D:/AGV/STM/encoder/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c'
 'Invoking: MCU GCC Compiler'
