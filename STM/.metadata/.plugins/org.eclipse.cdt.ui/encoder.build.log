@@ -1,4 +1,4 @@
-20:13:13 **** Incremental Build of configuration Release for project encoder ****
+20:23:06 **** Incremental Build of configuration Release for project encoder ****
 make all 
 'Building file: D:/AGV/STM/encoder/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c'
 'Invoking: MCU GCC Compiler'
@@ -155,5 +155,5 @@ arm-none-eabi-size "encoder.elf"
    9140	     12	   1852	  11004	   2afc	encoder.elf
 ' '
 
-20:13:21 Build Finished (took 7s.954ms)
+20:23:14 Build Finished (took 7s.905ms)
 

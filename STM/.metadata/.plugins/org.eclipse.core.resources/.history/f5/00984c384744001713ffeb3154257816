@@ -63,8 +63,6 @@ volatile uint16_t eR_speed=0; //in peaks for 64ms
 //variables for direction measurement
 volatile uint8_t eRdir=0;
 volatile uint8_t eLdir=0;
-volatile uint8_t eRch=0;
-volatile uint8_t eLch=0;
 
 //variables for turns counter
 volatile uint16_t eR_Ncnt=0;
@@ -73,7 +71,7 @@ volatile uint16_t eL_Ncnt=0;
 volatile uint8_t tic;
 //other
 
-static uint8_t TX_data[14];
+static uint8_t TX_data[12];
 static uint8_t RX_cmd[2];
 uint16_t Battery[2];
 
@@ -93,38 +91,24 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	case EncoderL_A_Pin:
 		eL_a++;
 		if(HAL_GPIO_ReadPin(EncoderL_B_GPIO_Port,EncoderL_B_Pin)){
-			if(eLdir==0)
-				eL_a=0;
 			eLdir=1;
-			if(eL_Ncnt==65535)
-				eLch=0;
 			eL_Ncnt++;
 		}
 		else{
-			if(eLdir==1)
-				eL_a=0;
 			eLdir=0;
-			if(eL_Ncnt==0)
-				eLch=1;
+			eL_a=0;
 			eL_Ncnt--;
 		}
 		break;
 	case EncoderR_A_Pin:
 		eR_a++;
 		if(HAL_GPIO_ReadPin(EncoderR_B_GPIO_Port,EncoderR_B_Pin)){
-			if(eRdir==0)
-				eR_a=0;
 			eRdir=1;
-			if(eR_Ncnt==65535)
-				eRch=0;
 			eR_Ncnt++;
 		}
 		else{
-			if(eRdir==1)
-				eR_a=0;
 			eRdir=0;
-			if(eR_Ncnt==0)
-				eRch=1;
+			eR_a=0;
 			eR_Ncnt--;
 		}
 		break;
@@ -149,27 +133,23 @@ void HAL_SYSTICK_Callback(void)
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 	if(RX_cmd[0]=='#' && RX_cmd[1]=='#'){
-		TX_data[0]=eLdir+(eLch<<1);
-		TX_data[1]=eRdir+(eRch<<1);
+		TX_data[0]=eLdir;
+		TX_data[1]=eRdir;
 		TX_data[2]=(uint8_t)(eL_speed>>8);
 		TX_data[3]=(uint8_t)eL_speed;
 		TX_data[4]=(uint8_t)(eR_speed>>8);
 		TX_data[5]=(uint8_t)eR_speed;
-		TX_data[6]=(uint8_t)eL_Ncnt;
-		TX_data[7]=(uint8_t)(eL_Ncnt >> 8);
-		TX_data[8]=(uint8_t)eR_Ncnt;
-		TX_data[9]=(uint8_t)(eR_Ncnt >> 8);
-		TX_data[10]=(uint8_t)(Battery[0]);
-		TX_data[11]=(uint8_t)(Battery[0]>>8);
-		TX_data[12]=(uint8_t)(Battery[1]);
-		TX_data[13]=(uint8_t)(Battery[1]>>8);
-		HAL_UART_Transmit_IT(&huart2, TX_data,14);
+		TX_data[6]=(uint8_t)(eL_Ncnt >> 8);
+		TX_data[7]=(uint8_t)eL_Ncnt;
+		TX_data[8]=(uint8_t)(eR_Ncnt >> 8);
+		TX_data[9]=(uint8_t)eR_Ncnt;
+		TX_data[10]=(uint8_t)(Battery[0]>>4);
+		TX_data[11]=(uint8_t)(Battery[1]>>4);
+		HAL_UART_Transmit_IT(&huart2, TX_data,12);
 		eR_Ncnt=0;
-		eRch=0;
 		eL_Ncnt=0;
-		eLch=0;
+		HAL_UART_Receive_IT(&huart2, RX_cmd, 2);
 	}
-	HAL_UART_Receive_IT(&huart2, RX_cmd, 2);
 }
 
 /* USER CODE END PFP */
