@@ -4,11 +4,13 @@ import PFcam
 cam = PFcam.Pgv100(
     address=0
 )
+cam.choose_dir('ahead')
+cam.choose_color('red')
 
 while 1:
     cam.update()
-    print(cam.raw)
-    print(cam.angle)
+
+    cam.print_all()
     time.sleep(1)
 
 

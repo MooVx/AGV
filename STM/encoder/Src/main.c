@@ -167,7 +167,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		eR_Ncnt=0;
 		eRch=0;
 		eL_Ncnt=0;
-		eLch=0;
+		eRch=0;
 	}
 	HAL_UART_Receive_IT(&huart2, RX_cmd, 2);
 }
