@@ -1,0 +1,13 @@
+bool dirL
+bool dirR
+int16 speedL
+int16 speedR
+int16 n_cntL
+int16 n_cntR
+int16 battery_12
+int16 battery_24
+bool safety_button
+bool field1
+bool field2
+bool field3
+bool field4

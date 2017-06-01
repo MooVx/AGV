@@ -1,0 +1,11 @@
+int16 goal_velocity
+float32 angle_limits
+float32 Y_limits
+---
+int16 final_velocity
+float32 final_angle
+float32 final_Y
+---
+int16 actual_velocity
+float32 actual_angle
+float32 actual_Y
