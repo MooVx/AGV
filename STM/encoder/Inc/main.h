@@ -46,6 +46,10 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define Field_3_Pin GPIO_PIN_0
+#define Field_3_GPIO_Port GPIOH
+#define Field_4_Pin GPIO_PIN_1
+#define Field_4_GPIO_Port GPIOH
 #define EncoderL_A_Pin GPIO_PIN_0
 #define EncoderL_A_GPIO_Port GPIOC
 #define EncoderL_A_EXTI_IRQn EXTI0_IRQn
@@ -56,6 +60,10 @@
 #define EncoderR_A_EXTI_IRQn EXTI2_IRQn
 #define EncoderR_B_Pin GPIO_PIN_3
 #define EncoderR_B_GPIO_Port GPIOC
+#define Field_1_Pin GPIO_PIN_0
+#define Field_1_GPIO_Port GPIOA
+#define Field_2_Pin GPIO_PIN_1
+#define Field_2_GPIO_Port GPIOA
 #define TX_Pin GPIO_PIN_2
 #define TX_GPIO_Port GPIOA
 #define RX_Pin GPIO_PIN_3
@@ -64,6 +72,14 @@
 #define Battery_12_GPIO_Port GPIOA
 #define Battery_24_Pin GPIO_PIN_0
 #define Battery_24_GPIO_Port GPIOB
+#define START_BUTTON_Pin GPIO_PIN_15
+#define START_BUTTON_GPIO_Port GPIOA
+#define BUTTON_3_Pin GPIO_PIN_11
+#define BUTTON_3_GPIO_Port GPIOC
+#define BUTTON_4_Pin GPIO_PIN_12
+#define BUTTON_4_GPIO_Port GPIOC
+#define STOP_BUTTON_Pin GPIO_PIN_7
+#define STOP_BUTTON_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

@@ -59,6 +59,17 @@ volatile uint16_t eR_a=0;
 volatile uint16_t eL_speed=0; //in peaks for 64ms
 volatile uint16_t eR_speed=0; //in peaks for 64ms
 
+//variables for lidar fields
+volatile uint8_t field1=0;
+volatile uint8_t field2=0;
+volatile uint8_t field3=0;
+volatile uint8_t field4=0;
+
+//variables for buttons
+volatile uint8_t button_stop=0;
+volatile uint8_t button_start=0;
+volatile uint8_t button_3=0;
+volatile uint8_t button_4=0;
 
 //variables for direction measurement
 volatile uint8_t eRdir=0;
@@ -135,7 +146,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 void HAL_SYSTICK_Callback(void)
 {
-
 	tic++;
   if(tic==64){
 	  eL_speed=eL_a;
@@ -149,8 +159,19 @@ void HAL_SYSTICK_Callback(void)
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 
 	if(RX_cmd[0]=='#' && RX_cmd[1]=='#'){
-		TX_data[0]=eLdir+(eLch<<1);
-		TX_data[1]=eRdir+(eRch<<1);
+		field1=HAL_GPIO_ReadPin(Field_1_GPIO_Port,Field_1_Pin);
+		field2=HAL_GPIO_ReadPin(Field_2_GPIO_Port,Field_2_Pin);
+		field3=HAL_GPIO_ReadPin(Field_3_GPIO_Port,Field_3_Pin);
+		field4=HAL_GPIO_ReadPin(Field_4_GPIO_Port,Field_4_Pin);
+
+		button_stop=HAL_GPIO_ReadPin(STOP_BUTTON_GPIO_Port,STOP_BUTTON_Pin);
+		button_start=HAL_GPIO_ReadPin(START_BUTTON_GPIO_Port,START_BUTTON_Pin);
+		button_3=HAL_GPIO_ReadPin(BUTTON_3_GPIO_Port,BUTTON_3_Pin);
+		button_4=HAL_GPIO_ReadPin(BUTTON_4_GPIO_Port,BUTTON_4_Pin);
+
+
+		TX_data[0]=eLdir+(eLch<<1)+(field1<<2)+(field2<<3)+(button_start<<4)+(button_stop<<5);
+		TX_data[1]=eRdir+(eRch<<1)+(field3<<2)+(field4<<3)+(button_3<<4)+(button_4<<5);
 		TX_data[2]=(uint8_t)(eL_speed>>8);
 		TX_data[3]=(uint8_t)eL_speed;
 		TX_data[4]=(uint8_t)(eR_speed>>8);
@@ -381,27 +402,35 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
-
   /*Configure GPIO pins : PC13 EncoderL_A_Pin EncoderR_A_Pin */
   GPIO_InitStruct.Pin = GPIO_PIN_13|EncoderL_A_Pin|EncoderR_A_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : EncoderL_B_Pin EncoderR_B_Pin */
-  GPIO_InitStruct.Pin = EncoderL_B_Pin|EncoderR_B_Pin;
+  /*Configure GPIO pins : Field_3_Pin Field_4_Pin */
+  GPIO_InitStruct.Pin = Field_3_Pin|Field_4_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : EncoderL_B_Pin EncoderR_B_Pin BUTTON_3_Pin BUTTON_4_Pin */
+  GPIO_InitStruct.Pin = EncoderL_B_Pin|EncoderR_B_Pin|BUTTON_3_Pin|BUTTON_4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PA5 */
-  GPIO_InitStruct.Pin = GPIO_PIN_5;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  /*Configure GPIO pins : Field_1_Pin Field_2_Pin START_BUTTON_Pin */
+  GPIO_InitStruct.Pin = Field_1_Pin|Field_2_Pin|START_BUTTON_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : STOP_BUTTON_Pin */
+  GPIO_InitStruct.Pin = STOP_BUTTON_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(STOP_BUTTON_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
