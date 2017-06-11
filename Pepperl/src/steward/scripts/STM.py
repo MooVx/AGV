@@ -19,7 +19,7 @@ class STM:
         self.field4 = 0
 
         self.UART = serial.Serial(
-            port='/dev/ttyACM0',
+            port='/dev/lidar_and_enc',
             baudrate=115200,
             parity=serial.PARITY_NONE,
             stopbits=serial.STOPBITS_ONE,

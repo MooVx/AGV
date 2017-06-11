@@ -48,25 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/agv/AGV/Pepperl/src
+CMAKE_SOURCE_DIR = /home/dawid/AGV/Pepperl/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/agv/AGV/Pepperl/build
+CMAKE_BINARY_DIR = /home/dawid/AGV/Pepperl/build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -90,27 +88,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -133,11 +110,23 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/agv/AGV/Pepperl/build/CMakeFiles /home/agv/AGV/Pepperl/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dawid/AGV/Pepperl/build/CMakeFiles /home/dawid/AGV/Pepperl/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/agv/AGV/Pepperl/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dawid/AGV/Pepperl/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -491,71 +480,6 @@ _steward_generate_messages_check_deps_MotorsActionResult/fast:
 .PHONY : _steward_generate_messages_check_deps_MotorsActionResult/fast
 
 #=============================================================================
-# Target rules for targets named _steward_generate_messages_check_deps_MotorsActionFeedback
-
-# Build rule for target.
-_steward_generate_messages_check_deps_MotorsActionFeedback: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _steward_generate_messages_check_deps_MotorsActionFeedback
-.PHONY : _steward_generate_messages_check_deps_MotorsActionFeedback
-
-# fast build rule for target.
-_steward_generate_messages_check_deps_MotorsActionFeedback/fast:
-	$(MAKE) -f steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsActionFeedback.dir/build.make steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsActionFeedback.dir/build
-.PHONY : _steward_generate_messages_check_deps_MotorsActionFeedback/fast
-
-#=============================================================================
-# Target rules for targets named _steward_generate_messages_check_deps_STMdata
-
-# Build rule for target.
-_steward_generate_messages_check_deps_STMdata: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _steward_generate_messages_check_deps_STMdata
-.PHONY : _steward_generate_messages_check_deps_STMdata
-
-# fast build rule for target.
-_steward_generate_messages_check_deps_STMdata/fast:
-	$(MAKE) -f steward/CMakeFiles/_steward_generate_messages_check_deps_STMdata.dir/build.make steward/CMakeFiles/_steward_generate_messages_check_deps_STMdata.dir/build
-.PHONY : _steward_generate_messages_check_deps_STMdata/fast
-
-#=============================================================================
-# Target rules for targets named _steward_generate_messages_check_deps_MotorsResult
-
-# Build rule for target.
-_steward_generate_messages_check_deps_MotorsResult: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _steward_generate_messages_check_deps_MotorsResult
-.PHONY : _steward_generate_messages_check_deps_MotorsResult
-
-# fast build rule for target.
-_steward_generate_messages_check_deps_MotorsResult/fast:
-	$(MAKE) -f steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsResult.dir/build.make steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsResult.dir/build
-.PHONY : _steward_generate_messages_check_deps_MotorsResult/fast
-
-#=============================================================================
-# Target rules for targets named actionlib_msgs_generate_messages_lisp
-
-# Build rule for target.
-actionlib_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_lisp
-.PHONY : actionlib_msgs_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f steward/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make steward/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named _steward_generate_messages_check_deps_MotorsActionGoal
-
-# Build rule for target.
-_steward_generate_messages_check_deps_MotorsActionGoal: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _steward_generate_messages_check_deps_MotorsActionGoal
-.PHONY : _steward_generate_messages_check_deps_MotorsActionGoal
-
-# fast build rule for target.
-_steward_generate_messages_check_deps_MotorsActionGoal/fast:
-	$(MAKE) -f steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsActionGoal.dir/build.make steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsActionGoal.dir/build
-.PHONY : _steward_generate_messages_check_deps_MotorsActionGoal/fast
-
-#=============================================================================
 # Target rules for targets named steward_geneus
 
 # Build rule for target.
@@ -634,6 +558,71 @@ _steward_generate_messages_check_deps_MotorsFeedback/fast:
 .PHONY : _steward_generate_messages_check_deps_MotorsFeedback/fast
 
 #=============================================================================
+# Target rules for targets named _steward_generate_messages_check_deps_MotorsResult
+
+# Build rule for target.
+_steward_generate_messages_check_deps_MotorsResult: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _steward_generate_messages_check_deps_MotorsResult
+.PHONY : _steward_generate_messages_check_deps_MotorsResult
+
+# fast build rule for target.
+_steward_generate_messages_check_deps_MotorsResult/fast:
+	$(MAKE) -f steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsResult.dir/build.make steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsResult.dir/build
+.PHONY : _steward_generate_messages_check_deps_MotorsResult/fast
+
+#=============================================================================
+# Target rules for targets named _steward_generate_messages_check_deps_MotorsActionFeedback
+
+# Build rule for target.
+_steward_generate_messages_check_deps_MotorsActionFeedback: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _steward_generate_messages_check_deps_MotorsActionFeedback
+.PHONY : _steward_generate_messages_check_deps_MotorsActionFeedback
+
+# fast build rule for target.
+_steward_generate_messages_check_deps_MotorsActionFeedback/fast:
+	$(MAKE) -f steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsActionFeedback.dir/build.make steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsActionFeedback.dir/build
+.PHONY : _steward_generate_messages_check_deps_MotorsActionFeedback/fast
+
+#=============================================================================
+# Target rules for targets named _steward_generate_messages_check_deps_STMdata
+
+# Build rule for target.
+_steward_generate_messages_check_deps_STMdata: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _steward_generate_messages_check_deps_STMdata
+.PHONY : _steward_generate_messages_check_deps_STMdata
+
+# fast build rule for target.
+_steward_generate_messages_check_deps_STMdata/fast:
+	$(MAKE) -f steward/CMakeFiles/_steward_generate_messages_check_deps_STMdata.dir/build.make steward/CMakeFiles/_steward_generate_messages_check_deps_STMdata.dir/build
+.PHONY : _steward_generate_messages_check_deps_STMdata/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_lisp
+
+# Build rule for target.
+actionlib_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_lisp
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f steward/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make steward/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named _steward_generate_messages_check_deps_MotorsActionGoal
+
+# Build rule for target.
+_steward_generate_messages_check_deps_MotorsActionGoal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _steward_generate_messages_check_deps_MotorsActionGoal
+.PHONY : _steward_generate_messages_check_deps_MotorsActionGoal
+
+# fast build rule for target.
+_steward_generate_messages_check_deps_MotorsActionGoal/fast:
+	$(MAKE) -f steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsActionGoal.dir/build.make steward/CMakeFiles/_steward_generate_messages_check_deps_MotorsActionGoal.dir/build
+.PHONY : _steward_generate_messages_check_deps_MotorsActionGoal/fast
+
+#=============================================================================
 # Target rules for targets named steward_gennodejs
 
 # Build rule for target.
@@ -665,7 +654,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... clean_test_results"
 	@echo "... run_tests"
 	@echo "... download_extra_data"
@@ -673,10 +662,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... doxygen"
 	@echo "... rebuild_cache"
-	@echo "... list_install_components"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... install"
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... steward_genpy"
@@ -697,17 +685,17 @@ help:
 	@echo "... steward_generate_messages"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... _steward_generate_messages_check_deps_MotorsActionResult"
-	@echo "... _steward_generate_messages_check_deps_MotorsActionFeedback"
-	@echo "... _steward_generate_messages_check_deps_STMdata"
-	@echo "... _steward_generate_messages_check_deps_MotorsResult"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... _steward_generate_messages_check_deps_MotorsActionGoal"
 	@echo "... steward_geneus"
 	@echo "... _steward_generate_messages_check_deps_Motors"
 	@echo "... _steward_generate_messages_check_deps_MotorsGoal"
 	@echo "... steward_generate_messages_py"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... _steward_generate_messages_check_deps_MotorsFeedback"
+	@echo "... _steward_generate_messages_check_deps_MotorsResult"
+	@echo "... _steward_generate_messages_check_deps_MotorsActionFeedback"
+	@echo "... _steward_generate_messages_check_deps_STMdata"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... _steward_generate_messages_check_deps_MotorsActionGoal"
 	@echo "... steward_gennodejs"
 	@echo "... steward_generate_messages_cpp"
 .PHONY : help

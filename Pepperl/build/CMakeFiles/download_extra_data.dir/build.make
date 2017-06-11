@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/agv/AGV/Pepperl/src
+CMAKE_SOURCE_DIR = /home/dawid/AGV/Pepperl/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/agv/AGV/Pepperl/build
+CMAKE_BINARY_DIR = /home/dawid/AGV/Pepperl/build
 
 # Utility rule file for download_extra_data.
 
@@ -67,6 +67,6 @@ CMakeFiles/download_extra_data.dir/clean:
 .PHONY : CMakeFiles/download_extra_data.dir/clean
 
 CMakeFiles/download_extra_data.dir/depend:
-	cd /home/agv/AGV/Pepperl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/agv/AGV/Pepperl/src /home/agv/AGV/Pepperl/src /home/agv/AGV/Pepperl/build /home/agv/AGV/Pepperl/build /home/agv/AGV/Pepperl/build/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dawid/AGV/Pepperl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dawid/AGV/Pepperl/src /home/dawid/AGV/Pepperl/src /home/dawid/AGV/Pepperl/build /home/dawid/AGV/Pepperl/build /home/dawid/AGV/Pepperl/build/CMakeFiles/download_extra_data.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/download_extra_data.dir/depend
 

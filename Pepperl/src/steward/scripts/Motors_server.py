@@ -32,7 +32,7 @@ def do_Motors(goal):
         
     result = MotorsResult()
     result.final_velocity = velocity_temp
-    server.set_succeeeded(result, "Velocity reached")
+    server.set_succeeded(result, "Velocity reached")
     
 
 rospy.init_node('Motors_server')

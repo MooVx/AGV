@@ -1,26 +1,26 @@
 
 "use strict";
 
-let Motors = require('./Motors.js');
-let Camera = require('./Camera.js');
 let STMdata = require('./STMdata.js');
-let MotorsResult = require('./MotorsResult.js');
-let MotorsActionGoal = require('./MotorsActionGoal.js');
-let MotorsActionFeedback = require('./MotorsActionFeedback.js');
+let Camera = require('./Camera.js');
+let Motors = require('./Motors.js');
 let MotorsActionResult = require('./MotorsActionResult.js');
 let MotorsAction = require('./MotorsAction.js');
-let MotorsGoal = require('./MotorsGoal.js');
 let MotorsFeedback = require('./MotorsFeedback.js');
+let MotorsGoal = require('./MotorsGoal.js');
+let MotorsResult = require('./MotorsResult.js');
+let MotorsActionFeedback = require('./MotorsActionFeedback.js');
+let MotorsActionGoal = require('./MotorsActionGoal.js');
 
 module.exports = {
-  Motors: Motors,
-  Camera: Camera,
   STMdata: STMdata,
-  MotorsResult: MotorsResult,
-  MotorsActionGoal: MotorsActionGoal,
-  MotorsActionFeedback: MotorsActionFeedback,
+  Camera: Camera,
+  Motors: Motors,
   MotorsActionResult: MotorsActionResult,
   MotorsAction: MotorsAction,
-  MotorsGoal: MotorsGoal,
   MotorsFeedback: MotorsFeedback,
+  MotorsGoal: MotorsGoal,
+  MotorsResult: MotorsResult,
+  MotorsActionFeedback: MotorsActionFeedback,
+  MotorsActionGoal: MotorsActionGoal,
 };

@@ -7,6 +7,10 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH="/home/agv/AGV/Pepperl/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
-export PWD="/home/agv/AGV/Pepperl/build"
-export PYTHONPATH="/home/agv/AGV/Pepperl/devel/lib/python2.7/dist-packages:/opt/ros/kinetic/lib/python2.7/dist-packages:$/opt/ros/kinetic/lib/python2.7:/opt/ros/kinetic/lib/python2.7"
+export CMAKE_PREFIX_PATH="/home/dawid/AGV/Pepperl/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/dawid/AGV/Pepperl/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/dawid/AGV/Pepperl/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD="/home/dawid/AGV/Pepperl/build"
+export PYTHONPATH="/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/dawid/AGV/Pepperl/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/agv/AGV/Pepperl/src:/home/dawid/AGV/Pepperl/src:$ROS_PACKAGE_PATH"

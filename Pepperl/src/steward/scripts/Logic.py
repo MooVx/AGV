@@ -7,12 +7,39 @@ from steward.msg import Motors
 
 Camera_msg_temp = Camera()
 
+
+
+def battery_voltage_ok(bat_1, bat_1_and_2):
+    bat_2 = bat_1_and_2 - bat_1
+    min_voltage = 1#???????
+    if (bat_1 < min_voltage) or (bat_2 < min_voltage):
+        return False
+    else:
+        return True
+
+
+def no_field_violation(f1, f2, f3, f4, state):
+    return True
+
+
+
 def callback1(STM_msg):
     global Camera_msg_temp
-    print STM_msg.speedR
-    print Camera_msg_temp.dir
     Motors_msg = Motors()
     
+
+    current_state = 0
+
+    if(battery_voltage_ok(STM_msg.battery_12, STM_msg.battery_24) and
+    no_field_violation(STM_msg.field1, STM_msg.field2, STM_msg.field3, STM_msg.field4, current_state)):
+        Motors_msg.motor1_pwm = 100
+        Motors_msg.motor2_pwm = 100
+    else:
+        Motors_msg.motor1_pwm = 0
+        Motors_msg.motor2_pwm = 0
+
+
+
     #Tutaj wjebac kod ktory wylicza co trzeba ;-P
     #Wyniki szampanskich obliczen zapisac do wiadomosci Motors_msg
     

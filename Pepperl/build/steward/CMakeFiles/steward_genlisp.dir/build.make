@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/agv/AGV/Pepperl/src
+CMAKE_SOURCE_DIR = /home/dawid/AGV/Pepperl/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/agv/AGV/Pepperl/build
+CMAKE_BINARY_DIR = /home/dawid/AGV/Pepperl/build
 
 # Utility rule file for steward_genlisp.
 
@@ -63,10 +63,10 @@ steward/CMakeFiles/steward_genlisp.dir/build: steward_genlisp
 .PHONY : steward/CMakeFiles/steward_genlisp.dir/build
 
 steward/CMakeFiles/steward_genlisp.dir/clean:
-	cd /home/agv/AGV/Pepperl/build/steward && $(CMAKE_COMMAND) -P CMakeFiles/steward_genlisp.dir/cmake_clean.cmake
+	cd /home/dawid/AGV/Pepperl/build/steward && $(CMAKE_COMMAND) -P CMakeFiles/steward_genlisp.dir/cmake_clean.cmake
 .PHONY : steward/CMakeFiles/steward_genlisp.dir/clean
 
 steward/CMakeFiles/steward_genlisp.dir/depend:
-	cd /home/agv/AGV/Pepperl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/agv/AGV/Pepperl/src /home/agv/AGV/Pepperl/src/steward /home/agv/AGV/Pepperl/build /home/agv/AGV/Pepperl/build/steward /home/agv/AGV/Pepperl/build/steward/CMakeFiles/steward_genlisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dawid/AGV/Pepperl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dawid/AGV/Pepperl/src /home/dawid/AGV/Pepperl/src/steward /home/dawid/AGV/Pepperl/build /home/dawid/AGV/Pepperl/build/steward /home/dawid/AGV/Pepperl/build/steward/CMakeFiles/steward_genlisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : steward/CMakeFiles/steward_genlisp.dir/depend
 
