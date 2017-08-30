@@ -11,15 +11,15 @@ def callback(data):
     global lm, rm
     lm.wake_up()
     rm.wake_up()
-    max_speed = 460
-    max_radial =max_speed * 2 * 3.14 / 60 
+    max_speed = 460.0
+    max_radial =max_speed * 2.0 * 3.14 / 60.0 
     dist = 0.36
     radius = 0.05
     omega_r = ( data.linear.x + data.angular.z / (2 * dist ) ) / (2 * 3.14 * radius)
     omega_l = ( data.linear.x - data.angular.z / (2 * dist ) ) / (2 * 3.14 * radius)
 
-    scaled_r = int(100 * omega_r/max_radial)
-    scaled_l = int(100 * omega_r/max_radial)
+    scaled_r = int(100.0 * omega_r/max_radial)
+    scaled_l = int(100.0 * omega_r/max_radial)
     rospy.loginfo("writing to drivers %d %d", scaled_l, scaled_r)
     lm.set_speed(scaled_l)
     rm.set_speed(scaled_r)
