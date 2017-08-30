@@ -15,6 +15,7 @@ while not rospy.is_shutdown():
     msg = STMdata()
     stm.read()
 
+
     msg.dirL = stm.dirL
     msg.dirR = stm.dirR
 
@@ -29,7 +30,7 @@ while not rospy.is_shutdown():
     msg.field3 = stm.field3
     msg.field4 = stm.field4
 
-    msg.safety_button = stm.safety_button
+    msg.safety_button = stm.button_stop
 
     msg.battery_12 = stm.battery_12
     msg.battery_24 = stm.battery_24
