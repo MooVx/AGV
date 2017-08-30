@@ -3,7 +3,7 @@
 import rospy
 from steward.msg import Motors
 from motor_driver import Polulu_driver
-from std_msgs.msg import Twist
+from geometry_msgs.msg import Twist
 lm = Polulu_driver(15, 'left_motor_driver')
 rm = Polulu_driver(15, 'right_motor_driver')
 
