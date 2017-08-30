@@ -9,7 +9,8 @@ rm = Polulu_driver(15, 'right_motor_driver')
 
 def callback(data):
     global lm, rm
-
+    lm.wake_up()
+    rm.wake_up()
     max_speed = 460
     max_radial =max_speed * 2 * 3.14 / 60 
     dist = 0.36
@@ -25,7 +26,7 @@ def callback(data):
 
 rospy.init_node('Motors')
 
-rospy.Subscriber('cmd_vel', Twist, callback)
+rospy.Subscriber('/cmd_vel', Twist, callback)
 
 lm.wake_up()
 rospy.spin()
