@@ -20,6 +20,7 @@ def callback(data):
 
     scaled_r = int(100 * omega_r/max_radial)
     scaled_l = int(100 * omega_r/max_radial)
+    rospy.loginfo("writing to drivers %d %d", scaled_l, scaled_r)
     lm.set_speed(scaled_l)
     rm.set_speed(scaled_r)
 
