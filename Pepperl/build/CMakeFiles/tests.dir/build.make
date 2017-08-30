@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dawid/AGV/Pepperl/src
+CMAKE_SOURCE_DIR = /home/pawel/AGV/Pepperl/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dawid/AGV/Pepperl/build
+CMAKE_BINARY_DIR = /home/pawel/AGV/Pepperl/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/dawid/AGV/Pepperl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dawid/AGV/Pepperl/src /home/dawid/AGV/Pepperl/src /home/dawid/AGV/Pepperl/build /home/dawid/AGV/Pepperl/build /home/dawid/AGV/Pepperl/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pawel/AGV/Pepperl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pawel/AGV/Pepperl/src /home/pawel/AGV/Pepperl/src /home/pawel/AGV/Pepperl/build /home/pawel/AGV/Pepperl/build /home/pawel/AGV/Pepperl/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

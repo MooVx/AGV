@@ -43,125 +43,125 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dawid/AGV/Pepperl/src
+CMAKE_SOURCE_DIR = /home/pawel/AGV/Pepperl/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dawid/AGV/Pepperl/build
+CMAKE_BINARY_DIR = /home/pawel/AGV/Pepperl/build
 
 # Utility rule file for steward_generate_messages_py.
 
 # Include the progress variables for this target.
 include steward/CMakeFiles/steward_generate_messages_py.dir/progress.make
 
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Motors.py
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsFeedback.py
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsResult.py
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsGoal.py
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Camera.py
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_STMdata.py
-steward/CMakeFiles/steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_STMdata.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Motors.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsFeedback.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsGoal.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Camera.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsResult.py
+steward/CMakeFiles/steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py
 
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Motors.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Motors.py: /home/dawid/AGV/Pepperl/src/steward/msg/Motors.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG steward/Motors"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/dawid/AGV/Pepperl/src/steward/msg/Motors.msg -Isteward:/home/dawid/AGV/Pepperl/src/steward/msg -Isteward:/home/dawid/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsAction.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsResult.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsActionFeedback.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsGoal.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsActionResult.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsFeedback.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsActionGoal.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG steward/MotorsAction"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsAction.msg -Isteward:/home/pawel/AGV/Pepperl/src/steward/msg -Isteward:/home/pawel/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsFeedback.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsFeedback.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsFeedback.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG steward/MotorsFeedback"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsFeedback.msg -Isteward:/home/dawid/AGV/Pepperl/src/steward/msg -Isteward:/home/dawid/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsActionGoal.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsGoal.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG steward/MotorsActionGoal"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsActionGoal.msg -Isteward:/home/pawel/AGV/Pepperl/src/steward/msg -Isteward:/home/pawel/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsActionFeedback.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsFeedback.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG steward/MotorsActionFeedback"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsActionFeedback.msg -Isteward:/home/dawid/AGV/Pepperl/src/steward/msg -Isteward:/home/dawid/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_STMdata.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_STMdata.py: /home/pawel/AGV/Pepperl/src/steward/msg/STMdata.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG steward/STMdata"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pawel/AGV/Pepperl/src/steward/msg/STMdata.msg -Isteward:/home/pawel/AGV/Pepperl/src/steward/msg -Isteward:/home/pawel/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsResult.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsResult.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsResult.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG steward/MotorsResult"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsResult.msg -Isteward:/home/dawid/AGV/Pepperl/src/steward/msg -Isteward:/home/dawid/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Motors.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Motors.py: /home/pawel/AGV/Pepperl/src/steward/msg/Motors.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG steward/Motors"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pawel/AGV/Pepperl/src/steward/msg/Motors.msg -Isteward:/home/pawel/AGV/Pepperl/src/steward/msg -Isteward:/home/pawel/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsGoal.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsGoal.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG steward/MotorsGoal"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsGoal.msg -Isteward:/home/dawid/AGV/Pepperl/src/steward/msg -Isteward:/home/dawid/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsActionResult.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsResult.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG steward/MotorsActionResult"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsActionResult.msg -Isteward:/home/pawel/AGV/Pepperl/src/steward/msg -Isteward:/home/pawel/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Camera.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Camera.py: /home/dawid/AGV/Pepperl/src/steward/msg/Camera.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG steward/Camera"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/dawid/AGV/Pepperl/src/steward/msg/Camera.msg -Isteward:/home/dawid/AGV/Pepperl/src/steward/msg -Isteward:/home/dawid/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsActionFeedback.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsFeedback.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG steward/MotorsActionFeedback"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsActionFeedback.msg -Isteward:/home/pawel/AGV/Pepperl/src/steward/msg -Isteward:/home/pawel/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsAction.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsActionGoal.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsFeedback.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsActionFeedback.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsGoal.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsResult.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsActionResult.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG steward/MotorsAction"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsAction.msg -Isteward:/home/dawid/AGV/Pepperl/src/steward/msg -Isteward:/home/dawid/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsFeedback.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsFeedback.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsFeedback.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG steward/MotorsFeedback"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsFeedback.msg -Isteward:/home/pawel/AGV/Pepperl/src/steward/msg -Isteward:/home/pawel/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsActionResult.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsResult.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalStatus.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG steward/MotorsActionResult"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsActionResult.msg -Isteward:/home/dawid/AGV/Pepperl/src/steward/msg -Isteward:/home/dawid/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsGoal.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsGoal.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG steward/MotorsGoal"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsGoal.msg -Isteward:/home/pawel/AGV/Pepperl/src/steward/msg -Isteward:/home/pawel/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsActionGoal.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py: /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsGoal.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py: /opt/ros/kinetic/share/actionlib_msgs/msg/GoalID.msg
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG steward/MotorsActionGoal"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/dawid/AGV/Pepperl/devel/share/steward/msg/MotorsActionGoal.msg -Isteward:/home/dawid/AGV/Pepperl/src/steward/msg -Isteward:/home/dawid/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Camera.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Camera.py: /home/pawel/AGV/Pepperl/src/steward/msg/Camera.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG steward/Camera"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pawel/AGV/Pepperl/src/steward/msg/Camera.msg -Isteward:/home/pawel/AGV/Pepperl/src/steward/msg -Isteward:/home/pawel/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_STMdata.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_STMdata.py: /home/dawid/AGV/Pepperl/src/steward/msg/STMdata.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG steward/STMdata"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/dawid/AGV/Pepperl/src/steward/msg/STMdata.msg -Isteward:/home/dawid/AGV/Pepperl/src/steward/msg -Isteward:/home/dawid/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsResult.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsResult.py: /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsResult.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG steward/MotorsResult"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pawel/AGV/Pepperl/devel/share/steward/msg/MotorsResult.msg -Isteward:/home/pawel/AGV/Pepperl/src/steward/msg -Isteward:/home/pawel/AGV/Pepperl/devel/share/steward/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/kinetic/share/actionlib_msgs/cmake/../msg -p steward -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg
 
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Motors.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsFeedback.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsResult.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsGoal.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Camera.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py
-/home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_STMdata.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dawid/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python msg __init__.py for steward"
-	cd /home/dawid/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg --initpy
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_STMdata.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Motors.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsFeedback.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsGoal.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Camera.py
+/home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsResult.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pawel/AGV/Pepperl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python msg __init__.py for steward"
+	cd /home/pawel/AGV/Pepperl/build/steward && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg --initpy
 
 steward_generate_messages_py: steward/CMakeFiles/steward_generate_messages_py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Motors.py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsFeedback.py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsResult.py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsGoal.py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Camera.py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_STMdata.py
-steward_generate_messages_py: /home/dawid/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsAction.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionGoal.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_STMdata.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Motors.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionResult.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsActionFeedback.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsFeedback.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsGoal.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_Camera.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/_MotorsResult.py
+steward_generate_messages_py: /home/pawel/AGV/Pepperl/devel/lib/python2.7/dist-packages/steward/msg/__init__.py
 steward_generate_messages_py: steward/CMakeFiles/steward_generate_messages_py.dir/build.make
 
 .PHONY : steward_generate_messages_py
@@ -172,10 +172,10 @@ steward/CMakeFiles/steward_generate_messages_py.dir/build: steward_generate_mess
 .PHONY : steward/CMakeFiles/steward_generate_messages_py.dir/build
 
 steward/CMakeFiles/steward_generate_messages_py.dir/clean:
-	cd /home/dawid/AGV/Pepperl/build/steward && $(CMAKE_COMMAND) -P CMakeFiles/steward_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/pawel/AGV/Pepperl/build/steward && $(CMAKE_COMMAND) -P CMakeFiles/steward_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : steward/CMakeFiles/steward_generate_messages_py.dir/clean
 
 steward/CMakeFiles/steward_generate_messages_py.dir/depend:
-	cd /home/dawid/AGV/Pepperl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dawid/AGV/Pepperl/src /home/dawid/AGV/Pepperl/src/steward /home/dawid/AGV/Pepperl/build /home/dawid/AGV/Pepperl/build/steward /home/dawid/AGV/Pepperl/build/steward/CMakeFiles/steward_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pawel/AGV/Pepperl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pawel/AGV/Pepperl/src /home/pawel/AGV/Pepperl/src/steward /home/pawel/AGV/Pepperl/build /home/pawel/AGV/Pepperl/build/steward /home/pawel/AGV/Pepperl/build/steward/CMakeFiles/steward_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : steward/CMakeFiles/steward_generate_messages_py.dir/depend
 

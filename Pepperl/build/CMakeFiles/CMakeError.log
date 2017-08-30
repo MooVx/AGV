@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/agv/AGV/Pepperl/build/CMakeFiles/CMakeTmp
+Change Dir: /home/pawel/AGV/Pepperl/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2af3e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2af3e.dir/build.make CMakeFiles/cmTC_2af3e.dir/build
-make[1]: Entering directory '/home/agv/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2af3e.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_2af3e.dir/CheckSymbolExists.c.o   -c /home/agv/AGV/Pepperl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_2af3e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2af3e.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_2af3e.dir/CheckSymbolExists.c.o  -o cmTC_2af3e -rdynamic 
-CMakeFiles/cmTC_2af3e.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_764ab/fast"
+/usr/bin/make -f CMakeFiles/cmTC_764ab.dir/build.make CMakeFiles/cmTC_764ab.dir/build
+make[1]: Entering directory '/home/pawel/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_764ab.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_764ab.dir/CheckSymbolExists.c.o   -c /home/pawel/AGV/Pepperl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_764ab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_764ab.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_764ab.dir/CheckSymbolExists.c.o  -o cmTC_764ab -rdynamic 
+CMakeFiles/cmTC_764ab.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_2af3e.dir/build.make:97: recipe for target 'cmTC_2af3e' failed
-make[1]: *** [cmTC_2af3e] Error 1
-make[1]: Leaving directory '/home/agv/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_2af3e/fast' failed
-make: *** [cmTC_2af3e/fast] Error 2
+CMakeFiles/cmTC_764ab.dir/build.make:97: recipe for target 'cmTC_764ab' failed
+make[1]: *** [cmTC_764ab] Error 1
+make[1]: Leaving directory '/home/pawel/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_764ab/fast' failed
+make: *** [cmTC_764ab/fast] Error 2
 
-File /home/agv/AGV/Pepperl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/pawel/AGV/Pepperl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,77 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/agv/AGV/Pepperl/build/CMakeFiles/CMakeTmp
+Change Dir: /home/pawel/AGV/Pepperl/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4c2b6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4c2b6.dir/build.make CMakeFiles/cmTC_4c2b6.dir/build
-make[1]: Entering directory '/home/agv/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4c2b6.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4c2b6.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_4c2b6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c2b6.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_4c2b6.dir/CheckFunctionExists.c.o  -o cmTC_4c2b6 -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_0ed07/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0ed07.dir/build.make CMakeFiles/cmTC_0ed07.dir/build
+make[1]: Entering directory '/home/pawel/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0ed07.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0ed07.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0ed07
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ed07.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_0ed07.dir/CheckFunctionExists.c.o  -o cmTC_0ed07 -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_4c2b6.dir/build.make:97: recipe for target 'cmTC_4c2b6' failed
-make[1]: *** [cmTC_4c2b6] Error 1
-make[1]: Leaving directory '/home/agv/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_4c2b6/fast' failed
-make: *** [cmTC_4c2b6/fast] Error 2
-
-
-Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/dawid/AGV/Pepperl/build/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_2591f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2591f.dir/build.make CMakeFiles/cmTC_2591f.dir/build
-make[1]: Entering directory '/home/dawid/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2591f.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_2591f.dir/CheckSymbolExists.c.o   -c /home/dawid/AGV/Pepperl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_2591f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2591f.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_2591f.dir/CheckSymbolExists.c.o  -o cmTC_2591f -rdynamic 
-CMakeFiles/cmTC_2591f.dir/CheckSymbolExists.c.o: In function `main':
-CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
-collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_2591f.dir/build.make:97: recipe for target 'cmTC_2591f' failed
-make[1]: *** [cmTC_2591f] Error 1
-make[1]: Leaving directory '/home/dawid/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_2591f/fast' failed
-make: *** [cmTC_2591f/fast] Error 2
-
-File /home/dawid/AGV/Pepperl/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <pthread.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef pthread_create
-  return ((int*)(&pthread_create))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-
-Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/dawid/AGV/Pepperl/build/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_bb085/fast"
-/usr/bin/make -f CMakeFiles/cmTC_bb085.dir/build.make CMakeFiles/cmTC_bb085.dir/build
-make[1]: Entering directory '/home/dawid/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_bb085.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_bb085.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_bb085
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb085.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_bb085.dir/CheckFunctionExists.c.o  -o cmTC_bb085 -rdynamic -lpthreads 
-/usr/bin/ld: cannot find -lpthreads
-collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_bb085.dir/build.make:97: recipe for target 'cmTC_bb085' failed
-make[1]: *** [cmTC_bb085] Error 1
-make[1]: Leaving directory '/home/dawid/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_bb085/fast' failed
-make: *** [cmTC_bb085/fast] Error 2
+CMakeFiles/cmTC_0ed07.dir/build.make:97: recipe for target 'cmTC_0ed07' failed
+make[1]: *** [cmTC_0ed07] Error 1
+make[1]: Leaving directory '/home/pawel/AGV/Pepperl/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0ed07/fast' failed
+make: *** [cmTC_0ed07/fast] Error 2
 
 
