@@ -1,2 +1,15 @@
-.idea/
-.idea/workspace.xml
+ROS/devel/
+
+ROS/build/
+
+ROS/\.vscode/
+
+
+
+ROS/\.catkin_workspace
+	
+\.idea/
+	
+tests/
+	
+*.pyc

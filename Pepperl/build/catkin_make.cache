@@ -1,2 +1,0 @@
-steward
--DCATKIN_DEVEL_PREFIX=/home/dawid/AGV/Pepperl/devel -DCMAKE_INSTALL_PREFIX=/home/dawid/AGV/Pepperl/install -G Unix Makefiles
