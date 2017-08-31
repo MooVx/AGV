@@ -44,7 +44,7 @@ def callback1(STM_msg):
         # Tutaj wjebac kod ktory wylicza co trzeba ;-P
         # Wyniki szampanskich obliczen zapisac do wiadomosci Motors_msg
 
-        # pub.publish(Motors_msg)
+    pub.publish(Motors_msg)
 
 
 # This callback will react on Camera messege
