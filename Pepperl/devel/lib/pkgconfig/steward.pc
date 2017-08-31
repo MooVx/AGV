@@ -1,8 +1,0 @@
-prefix=/home/agv/AGV/Pepperl/devel
-
-Name: steward
-Description: Description of steward
-Version: 0.0.0
-Cflags: -I/home/agv/AGV/Pepperl/devel/include
-Libs: -L/home/agv/AGV/Pepperl/devel/lib 
-Requires: rospy message_runtime actionlib_msgs
