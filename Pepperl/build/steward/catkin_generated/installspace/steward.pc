@@ -1,0 +1,8 @@
+prefix=/home/pawel/AGV/Pepperl/install
+
+Name: steward
+Description: Description of steward
+Version: 0.0.0
+Cflags: -I/home/pawel/AGV/Pepperl/install/include
+Libs: -L/home/pawel/AGV/Pepperl/install/lib 
+Requires: rospy message_runtime actionlib_msgs

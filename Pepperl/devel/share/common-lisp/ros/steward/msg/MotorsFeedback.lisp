@@ -1,0 +1,116 @@
+; Auto-generated. Do not edit!
+
+
+(cl:in-package steward-msg)
+
+
+;//! \htmlinclude MotorsFeedback.msg.html
+
+(cl:defclass <MotorsFeedback> (roslisp-msg-protocol:ros-message)
+  ((actual_velocity
+    :reader actual_velocity
+    :initarg :actual_velocity
+    :type cl:fixnum
+    :initform 0)
+   (actual_angle
+    :reader actual_angle
+    :initarg :actual_angle
+    :type cl:float
+    :initform 0.0)
+   (actual_Y
+    :reader actual_Y
+    :initarg :actual_Y
+    :type cl:float
+    :initform 0.0))
+)
+
+(cl:defclass MotorsFeedback (<MotorsFeedback>)
+  ())
+
+(cl:defmethod cl:initialize-instance :after ((m <MotorsFeedback>) cl:&rest args)
+  (cl:declare (cl:ignorable args))
+  (cl:unless (cl:typep m 'MotorsFeedback)
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name steward-msg:<MotorsFeedback> is deprecated: use steward-msg:MotorsFeedback instead.")))
+
+(cl:ensure-generic-function 'actual_velocity-val :lambda-list '(m))
+(cl:defmethod actual_velocity-val ((m <MotorsFeedback>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader steward-msg:actual_velocity-val is deprecated.  Use steward-msg:actual_velocity instead.")
+  (actual_velocity m))
+
+(cl:ensure-generic-function 'actual_angle-val :lambda-list '(m))
+(cl:defmethod actual_angle-val ((m <MotorsFeedback>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader steward-msg:actual_angle-val is deprecated.  Use steward-msg:actual_angle instead.")
+  (actual_angle m))
+
+(cl:ensure-generic-function 'actual_Y-val :lambda-list '(m))
+(cl:defmethod actual_Y-val ((m <MotorsFeedback>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader steward-msg:actual_Y-val is deprecated.  Use steward-msg:actual_Y instead.")
+  (actual_Y m))
+(cl:defmethod roslisp-msg-protocol:serialize ((msg <MotorsFeedback>) ostream)
+  "Serializes a message object of type '<MotorsFeedback>"
+  (cl:let* ((signed (cl:slot-value msg 'actual_velocity)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    )
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'actual_angle))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'actual_Y))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+)
+(cl:defmethod roslisp-msg-protocol:deserialize ((msg <MotorsFeedback>) istream)
+  "Deserializes a message object of type '<MotorsFeedback>"
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'actual_velocity) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'actual_angle) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'actual_Y) (roslisp-utils:decode-single-float-bits bits)))
+  msg
+)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<MotorsFeedback>)))
+  "Returns string type for a message object of type '<MotorsFeedback>"
+  "steward/MotorsFeedback")
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'MotorsFeedback)))
+  "Returns string type for a message object of type 'MotorsFeedback"
+  "steward/MotorsFeedback")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<MotorsFeedback>)))
+  "Returns md5sum for a message object of type '<MotorsFeedback>"
+  "3315109a593fd61ca499c8580578c0ca")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'MotorsFeedback)))
+  "Returns md5sum for a message object of type 'MotorsFeedback"
+  "3315109a593fd61ca499c8580578c0ca")
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<MotorsFeedback>)))
+  "Returns full string definition for message of type '<MotorsFeedback>"
+  (cl:format cl:nil "# ====== DO NOT MODIFY! AUTOGENERATED FROM AN ACTION DEFINITION ======~%int16 actual_velocity~%float32 actual_angle~%float32 actual_Y~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'MotorsFeedback)))
+  "Returns full string definition for message of type 'MotorsFeedback"
+  (cl:format cl:nil "# ====== DO NOT MODIFY! AUTOGENERATED FROM AN ACTION DEFINITION ======~%int16 actual_velocity~%float32 actual_angle~%float32 actual_Y~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:serialization-length ((msg <MotorsFeedback>))
+  (cl:+ 0
+     2
+     4
+     4
+))
+(cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <MotorsFeedback>))
+  "Converts a ROS message object to a list"
+  (cl:list 'MotorsFeedback
+    (cl:cons ':actual_velocity (actual_velocity msg))
+    (cl:cons ':actual_angle (actual_angle msg))
+    (cl:cons ':actual_Y (actual_Y msg))
+))

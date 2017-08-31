@@ -1,0 +1,2 @@
+pepperl_fuchs/dummy_slam_broadcaster:pepperl_fuchs/pepperl_fuchs_r2000:steward
+-DCATKIN_DEVEL_PREFIX=/home/pawel/AGV/Pepperl/devel -DCMAKE_INSTALL_PREFIX=/home/pawel/AGV/Pepperl/install -G Unix Makefiles
