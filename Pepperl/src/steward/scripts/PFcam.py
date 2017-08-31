@@ -110,9 +110,10 @@ class Pgv100:
         else:
             self.angle = angle
 
-        self.pos_y = (self.raw[7] & 0b00011111) + ((self.raw[6] & 0b00111111) << 7)
-        if self.raw[7] & 0b00100000:
-            self.pos_y = -self.pos_y
+        self.pos_y = int(self.raw[7]) + ( int(self.raw[6]) * 128)
+	print 'raw ', self.raw[7], self.raw[6]
+        if self.pos_y > 10000:
+            self.pos_y = self.pos_y - (128 * 128)
 
         if self.raw[1] & 0b00000010:
             self.dir = 'left'
