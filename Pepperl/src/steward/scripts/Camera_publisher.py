@@ -25,6 +25,7 @@ while not rospy.is_shutdown():
     msg.lanes = cam.lanes
     msg.any_line = cam.any_lane
     msg.angle = int(cam.angle)
-
+    msg.pos_y = cam.pos_y
+    
     pub.publish(msg)
     rate.sleep()
