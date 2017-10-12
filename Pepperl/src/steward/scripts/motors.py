@@ -15,12 +15,12 @@ def callback(data):
     max_radial =max_speed * 2.0 * 3.14 / 60.0 
     dist = 0.36
     radius = 0.05
-    omega_r = ( data.linear.x + data.angular.z / (2 * dist ) ) / (2 * 3.14 * radius)
-    omega_l = ( data.linear.x - data.angular.z / (2 * dist ) ) / (2 * 3.14 * radius)
-
+    omega_r = 2.0 * 3.14 * ( data.linear.x + data.angular.z / (2.0 * dist ) ) / (2.0 * 3.14 * radius)
+    omega_l = 2.0 * 3.14 * ( data.linear.x - data.angular.z / (2.0 * dist ) ) / (2.0 * 3.14 * radius)
+#    rospy.loginfo("omega l and r %f %f", omega_l, omega_r)
     scaled_r = int(100.0 * omega_r/max_radial)
-    scaled_l = int(100.0 * omega_r/max_radial)
-    rospy.loginfo("writing to drivers %d %d", scaled_l, scaled_r)
+    scaled_l = int(100.0 * omega_l/max_radial)
+#    rospy.loginfo("writing to drivers %d %d", scaled_l, scaled_r)
     lm.set_speed(scaled_l)
     rm.set_speed(scaled_r)
 

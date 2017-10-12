@@ -14,8 +14,9 @@ rate = rospy.Rate(10)
 cam = PFcam.Pgv100(
     address=0
 )
-cam.choose_color('red')
+cam.choose_color('green')
 cam.choose_dir('ahead')
+cam.read_from_bus(0)
 
 # This publisher will work as long as ROS
 while not rospy.is_shutdown():
@@ -26,6 +27,6 @@ while not rospy.is_shutdown():
     msg.any_line = cam.any_lane
     msg.angle = int(cam.angle)
     msg.pos_y = cam.pos_y
-    
+
     pub.publish(msg)
     rate.sleep()

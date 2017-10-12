@@ -30,7 +30,7 @@ class Pgv100:
             self.known = 0  # Associated control code is detected.
             self.orient = 'none'  # Orientation control code for lane
             self.side = 'none'  # Relative position control code for lane
-
+0
     def send_req(self, req):
         self.rs485.write(chr(req + self.address))
         self.rs485.write(chr(255 - req - self.address))

@@ -18,6 +18,7 @@ class Pgv100:
         self.rs485 = serial.Serial(
             port='/dev/ttyS0',
             baudrate=115200,
+	    timeout = 0.5,
             parity=serial.PARITY_EVEN,
             stopbits=serial.STOPBITS_ONE,
             bytesize=serial.EIGHTBITS
@@ -41,7 +42,8 @@ class Pgv100:
         # Return:       table of read data
         if bytes_to_read > 0:
             data = self.rs485.read(bytes_to_read)
-
+	    if len(data) < bytes_to_read:
+		print "cant read enough bytes, wanted to read " , bytes_to_read, " got ", len(data)
         else:
             data = self.rs485.read_all()
         formatted_data = []
@@ -91,21 +93,27 @@ class Pgv100:
         # Description:  updating all of variables from camera
         # Arguments:    none
         # Return:       raw data - table 21x8
+	self.raw = []
+	while len(self.raw) != 21:
+            self.send_req(128 + 64 + 8 + self.address)
+            self.raw = self.read_from_bus(21)
 
-        self.send_req(128 + 64 + 8 + self.address)
-        self.raw = self.read_from_bus(21)
+
+
         self.any_lane = bool(self.raw[1] & 0b00000100)
         self.lanes = (self.raw[1] & 0b00110000) >> 4
 
-        angle = ((self.raw[11] & 0b001111111) + ((self.raw[10] & 0b001111111) << 7))
+        angle = (int(self.raw[11]) + int(self.raw[10]) * 128)
+	
         if angle > 200:
-            self.angle = -(360 - angle)
+            self.angle = -(360 - int(angle))
         else:
             self.angle = angle
 
-        self.pos_y = (self.raw[7] & 0b00011111) + ((self.raw[6] & 0b00111111) << 7)
-        if self.raw[7] & 0b00100000:
-            self.pos_y = -self.pos_y
+        self.pos_y = int(self.raw[7]) + ( int(self.raw[6]) * 128)
+	print 'raw ', self.raw[7], self.raw[6]
+        if self.pos_y > 10000:
+            self.pos_y = self.pos_y - (128 * 128)
 
         if self.raw[1] & 0b00000010:
             self.dir = 'left'

@@ -1,12 +1,12 @@
-ROS/devel/
+Pepperl/devel/
 
-ROS/build/
+Pepperl/build/
 
-ROS/\.vscode/
+Pepperl/\.vscode/
 
 
 
-ROS/\.catkin_workspace
+Pepperl/\.catkin_workspace
 	
 \.idea/
 	
