@@ -24,12 +24,10 @@ def create_cmd_vel_from_cam(camera_data):
 
 
 
-
-
 rospy.init_node("path_planner")
 
 rospy.Subscriber("Camera_data", Camera, cam_cb)
-cmd_vel_pub = rospy.Publisher("cmd_vel", Twist, queue_size=None)
+cmd_vel_pub = rospy.Publisher("cmd_vel", Twist, queue_size=10)
 rate = rospy.Rate(10)
 
 while not rospy.is_shutdown():
