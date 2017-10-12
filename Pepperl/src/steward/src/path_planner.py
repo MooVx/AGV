@@ -27,7 +27,6 @@ def create_cmd_vel_from_cam(camera_data):
 
 
 
-
 rospy.init_node("path_planner")
 
 rospy.Subscriber("Camera_data", Camera, cam_cb)
