@@ -20,7 +20,7 @@ def create_cmd_vel_from_cam(camera_data):
         vel_msg.linear.x = 0.1
         if abs(camera_data.angle) < 30:
             vel_msg.angular.z = camera_data.pos_y/10.0
-
+    return vel_msg
 
 
 
