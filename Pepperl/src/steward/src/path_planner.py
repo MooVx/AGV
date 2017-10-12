@@ -15,11 +15,13 @@ def cam_cb(data):
     last_cam_cb = rospy.get_time()
 
 def create_cmd_vel_from_cam(camera_data):
+    k_th = 1.0
+    k_x = 0.2
     vel_msg = Twist()
     if camera_data.lanes > 0:
         vel_msg.linear.x = 0.1
         if abs(camera_data.angle) < 30:
-            vel_msg.angular.z = camera_data.pos_y/10.0
+            vel_msg.angular.z = k_th * camera_data.pos_y/100.0
     return vel_msg
 
 
