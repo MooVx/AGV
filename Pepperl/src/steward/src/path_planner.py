@@ -17,10 +17,10 @@ def cam_cb(data):
 
 def create_cmd_vel_from_cam(camera_data):
     vel_msg = Twist()
-    if camera_data.any_lane:
+    if camera_data.lanes > 0:
         vel_msg.linear.x = 0.1
         if abs(camera_data.angle) < 30:
-            vel_msg.angular.z = camera_data.pos_y
+            vel_msg.angular.z = camera_data.pos_y/10.0
 
 
 
