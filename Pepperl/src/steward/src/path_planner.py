@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 
 import rospy
-from motor_driver import Polulu_driver
 from geometry_msgs.msg import Twist
 from steward.msg import Camera
 from numpy import abs
