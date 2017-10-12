@@ -94,8 +94,12 @@ class Pgv100:
         # Arguments:    none
         # Return:       raw data - table 21x8
 	self.raw = []
-    self
+
+
+
     self.rs485.read_all()
+
+
 	while len(self.raw) != 21:
             self.send_req(128 + 64 + 8 + self.address)
             self.raw = self.read_from_bus(21)
