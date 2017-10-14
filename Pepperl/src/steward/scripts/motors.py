@@ -45,12 +45,14 @@ def stm_callback(data):
     dt = rospy.get_time() - last_cb
     last_cb = rospy.get_time()
 
-    speed_left = data.n_cntL
-    speed_right = data.n_cntR
 
-    if data.dirL:
-        speed_left = speed_left * (-1)
+    #not mistake!
+    speed_left = data.n_cntR
+    speed_right = data.n_cntL
+
     if data.dirR:
+        speed_left = speed_left * (-1)
+    if data.dirL:
         speed_right = speed_right * (-1)
 
 
