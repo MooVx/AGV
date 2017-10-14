@@ -41,17 +41,28 @@ def right_callback(data):
 
 def stm_callback(data):
     global left_state_pub, right_state_pub
-    speed_left = data.speedL
-    speed_right = data.speedR
 
-    speed_left = float(speed_left) * 1.0
-    speed_right = float(speed_right) * 1.0
+    dt = rospy.get_time() - last_cb()
+    last_cb = rospy.get_time()
+
+    speed_left = data.n_cntL
+    speed_right = data.n_cntR
+
+    if data.dirL:
+        speed_left = speed_left * (-1)
+    if data.dirR:
+        speed_right = speed_right * (-1)
+
+
+    speed_left = float(speed_left) * 2 * 3.14  / ( 2048.0 * dt)
+    speed_right = float(speed_right) * 2 * 3.14  / ( 2048.0 * dt)
     
     left_state_pub.publish(Float64(speed_left))
     right_state_pub.publish(Float64(speed_right))
 
 
 rospy.init_node('Motors')
+last_cb = rospy.get_time()
 
 rospy.Subscriber('/cmd_vel', Twist, callback)
 
