@@ -1,8 +1,8 @@
 <launch>
     <node name="left_wheel_pid" pkg="pid" type="controller" ns='left' output="screen">
       <param name="Kp" value="10.0" />
-      <param name="Ki" value="0.0" />
-      <param name="Kd" value="0.1" />
+      <param name="Ki" value="0.3" />
+      <param name="Kd" value="0.0" />
       <param name="upper_limit" value="100" />
       <param name="lower_limit" value="-100" />
       <param name="windup_limit" value="100" />
@@ -12,8 +12,8 @@
 
     <node name="right_wheel_pid" pkg="pid" type="controller" ns='right' output="screen">
       <param name="Kp" value="10.0" />
-      <param name="Ki" value="0.0" />
-      <param name="Kd" value="0.1" />
+      <param name="Ki" value="0.3" />
+      <param name="Kd" value="0.0" />
       <param name="upper_limit" value="100" />
       <param name="lower_limit" value="-100" />
       <param name="windup_limit" value="100" />
