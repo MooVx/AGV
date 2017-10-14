@@ -40,9 +40,9 @@ def right_callback(data):
     rm.set_speed(int(data.data))
 
 def stm_callback(data):
-    global left_state_pub, right_state_pub
+    global left_state_pub, right_state_pub, last_cb
 
-    dt = rospy.get_time() - last_cb()
+    dt = rospy.get_time() - last_cb
     last_cb = rospy.get_time()
 
     speed_left = data.n_cntL
