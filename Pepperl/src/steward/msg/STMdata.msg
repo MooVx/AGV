@@ -1,11 +1,11 @@
 bool dirL
 bool dirR
-int16 speedL
-int16 speedR
-int16 n_cntL
-int16 n_cntR
-int16 battery_12
-int16 battery_24
+int32 speedL
+int32 speedR
+int32 n_cntL
+int32 n_cntR
+int32 battery_12
+int32 battery_24
 bool safety_button
 bool field1
 bool field2
