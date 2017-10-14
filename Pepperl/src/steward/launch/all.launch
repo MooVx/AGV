@@ -1,0 +1,7 @@
+<launch>
+    <node name="stm" pkg="steward" type="stm_publisher.py" >
+    </node>
+    <node name="motors" pkg="steward" type="motors.py" >
+    </node>
+    
+</launch>
