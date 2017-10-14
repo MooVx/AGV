@@ -4,30 +4,66 @@ import rospy
 from steward.msg import Motors
 from motor_driver import Polulu_driver
 from geometry_msgs.msg import Twist
+from std_msgs.msg import Float64
+from steward.msg import STMdata
+
 lm = Polulu_driver(15, 'left_motor_driver')
 rm = Polulu_driver(15, 'right_motor_driver')
 
 def callback(data):
-    global lm, rm
-    lm.wake_up()
-    rm.wake_up()
+    global lm, rm, left_sp_pub, right_sp_pub
+    # lm.wake_up()
+    # rm.wake_up()
     max_speed = 460.0
     max_radial =max_speed * 2.0 * 3.14 / 60.0 
     dist = 0.36
     radius = 0.05
     omega_r = 2.0 * 3.14 * ( data.linear.x - data.angular.z / (2.0 * dist ) ) / (2.0 * 3.14 * radius)
     omega_l = 2.0 * 3.14 * ( data.linear.x + data.angular.z / (2.0 * dist ) ) / (2.0 * 3.14 * radius)
-#    rospy.loginfo("omega l and r %f %f", omega_l, omega_r)
-    scaled_r = int(100.0 * omega_r/max_radial)
-    scaled_l = int(100.0 * omega_l/max_radial)
-#    rospy.loginfo("writing to drivers %d %d", scaled_l, scaled_r)
-    lm.set_speed(scaled_l)
-    rm.set_speed(scaled_r)
+    right_sp_pub.publish(Float64(omega_r))
+    left_sp_pub.publish(Float64(omega_l))
+
+
+    # scaled_r = int(100.0 * omega_r/max_radial)
+    # scaled_l = int(100.0 * omega_l/max_radial)
+    # lm.set_speed(scaled_l)
+    # rm.set_speed(scaled_r)
+
+def left_callback(data):
+    global lm
+    lm.wake_up()
+    lm.set_speed(int(data.data))
+
+def right_callback(data):
+    global rm
+    rm.wake_up()
+    rm.set_speed(int(data.data))
+
+def stm_callback(data):
+    global left_state_pub, right_state_pub
+    speed_left = data.speedL
+    speed_right = data.speedR
+
+    speed_left = float(speed_left) * 1.0
+    speed_right = float(speed_right) * 1.0
+    
+    left_state_pub.publish(Float64(speed_left))
+    right_state_pub.publish(Float64(speed_right))
 
 
 rospy.init_node('Motors')
 
 rospy.Subscriber('/cmd_vel', Twist, callback)
 
-lm.wake_up()
+left_sp_pub = rospy.Publisher("/left/setpoint", Float64, queue_size=10)
+right_sp_pub = rospy.Publisher("/right/setpoint", Float64, queue_size=10)
+
+left_state_pub = rospy.Publisher("/left/state", Float64, queue_size=10) 
+right_state_pub = rospy.Publisher("/right/state", Float64, queue_size=10) 
+
+rospy.Subscriber('/left/control_effort', Float64, left_callback)
+rospy.Subscriber('/right/control_effort', Float64, right_callback)
+
+rospy.Subscriber('STM_data', STMdata, stm_callback)
+
 rospy.spin()
