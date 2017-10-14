@@ -39,6 +39,7 @@ class STM:
         # Return:       table of read data
         data = []
         while len(data) < 14:
+            self.UART.read_all()
             self.UART.write('##')
             data = self.UART.read(14)
         formatted_data = []
