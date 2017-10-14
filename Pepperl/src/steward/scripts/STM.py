@@ -28,15 +28,19 @@ class STM:
             baudrate=115200,
             parity=serial.PARITY_NONE,
             stopbits=serial.STOPBITS_ONE,
-            bytesize=serial.EIGHTBITS
+            bytesize=serial.EIGHTBITS,
+            timeout=0.2,
+            write_timeout=0.2
         )
 
     def read(self):
-        # Description:  reading data from camera over rs485
+        # Description:  reading data from camera over virtual uart
         # Arguments:    none
         # Return:       table of read data
-        self.UART.write('##')
-        data = self.UART.read(14)
+        data = []
+        while len(data) < 14:
+            self.UART.write('##')
+            data = self.UART.read(14)
         formatted_data = []
         for i in range(0, len(data)):
             formatted_data.append(ord(data[i]))
