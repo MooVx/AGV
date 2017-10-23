@@ -45,11 +45,14 @@ def stm_callback(data):
 
 
 rospy.init_node("path_planner")
-rospy.Subscriber('STM_data', STMdata, stm_callback)
+# rospy.Subscriber('STM_data', STMdata, stm_callback)
 rospy.Subscriber("Camera_data", Camera, cam_cb)
 
 cmd_vel_pub = rospy.Publisher("cmd_vel", Twist, queue_size=10)
 rate = rospy.Rate(10)
+
+
+state = 'run'
 
 while not rospy.is_shutdown():
 
