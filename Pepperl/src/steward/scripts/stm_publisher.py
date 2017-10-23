@@ -31,7 +31,10 @@ while not rospy.is_shutdown():
     msg.field4 = stm.field4
 
     msg.safety_button = stm.button_stop
-
+    msg.start_button = stm.button_start
+    msg.button3 = stm.button_3
+    msg.button4 = stm.button_4
+    
     msg.battery_12 = stm.battery_12
     msg.battery_24 = stm.battery_24
 

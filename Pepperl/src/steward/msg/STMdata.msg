@@ -7,6 +7,9 @@ int32 n_cntR
 int32 battery_12
 int32 battery_24
 bool safety_button
+bool start_button
+bool button3
+bool button4
 bool field1
 bool field2
 bool field3
