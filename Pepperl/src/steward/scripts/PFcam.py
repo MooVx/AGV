@@ -121,7 +121,6 @@ class Pgv100:
             self.angle = angle
 
         self.pos_y = int(self.raw[7]) + ( int(self.raw[6]) * 128)
-	print 'raw ', self.raw[7], self.raw[6]
         if self.pos_y > 10000:
             self.pos_y = self.pos_y - (128 * 128)
 
