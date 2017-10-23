@@ -15,6 +15,7 @@ cam = PFcam.Pgv100(
     address=0
 )
 while not cam.choose_color('green') or not cam.choose_dir('left'):
+    print cam.choose_color('green'), cam.choose_dir('left')
     rospy.logwarn('cannot config camera!')
     sleep(1.0)
 
