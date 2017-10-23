@@ -76,13 +76,13 @@ class Pgv100:
         # Return:       none
         if direction == 'left':
             self.send_req(128 + 64 + 32 + 8)
-            return self.read_from_bus(1) == [2]
+            return True
         elif direction == 'ahead':
             self.send_req(128 + 64 + 32 + 8 + 4)
-            return self.read_from_bus(1) == [3]
+            return True
         elif direction == 'right':
             self.send_req(128 + 64 + 32 + 4)
-            return self.read_from_bus(1) == [1]
+            return True
         else:
             print('No direction selected')
 
