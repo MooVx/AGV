@@ -21,7 +21,7 @@ def cam_cb(data):
 
 def is_area_clear():
     global stm_data
-    return not stm_data.field1S
+    return not stm_data.field1
 
 def create_cmd_vel_from_cam(camera_data):
     k_th = 1.0
