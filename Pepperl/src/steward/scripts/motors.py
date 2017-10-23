@@ -4,7 +4,7 @@ import rospy
 from steward.msg import Motors
 from motor_driver import Polulu_driver
 from geometry_msgs.msg import Twist
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64, Bool
 from steward.msg import STMdata
 
 lm = Polulu_driver(15, 'left_motor_driver')
@@ -33,20 +33,24 @@ def callback(data):
     # rm.set_speed(scaled_r)
 
 def left_callback(data):
-    global lm, last_safety_ok, timeout
+    global lm, last_safety_ok, timeout, stop_l_pub
     lm.wake_up()
     if rospy.get_time() - last_safety_ok < timeout:
+        stop_l_pub.publish(Bool(True))     
         lm.set_speed(int(data.data))
     else:
         lm.set_speed(0)
+        stop_l_pub.publish(Bool(False))
 
 def right_callback(data):
-    global rm, last_safety_ok
+    global rm, last_safety_ok, timeout, stop_r_pub
     rm.wake_up()
     if rospy.get_time() - last_safety_ok < timeout:
+        stop_r_pub.publish(Bool(True)) 
         rm.set_speed(int(data.data))
     else:
         rm.set_speed(0)
+        stop_r_pub.publish(Bool(False))
 
 def stm_callback(data):
     global left_state_pub, right_state_pub, last_cb, last_safety_ok
@@ -85,6 +89,9 @@ right_sp_pub = rospy.Publisher("/right/setpoint", Float64, queue_size=10)
 
 left_state_pub = rospy.Publisher("/left/state", Float64, queue_size=10) 
 right_state_pub = rospy.Publisher("/right/state", Float64, queue_size=10) 
+
+stop_r_pub = rospy.Publisher("/right/pid_enable", Bool, queue_size=10)
+stop_l_pub = rospy.Publisher("/left/pid_enable", Bool, queue_size=10)
 
 rospy.Subscriber('/left/control_effort', Float64, left_callback)
 rospy.Subscriber('/right/control_effort', Float64, right_callback)

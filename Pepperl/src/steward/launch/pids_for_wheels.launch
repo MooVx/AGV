@@ -5,7 +5,7 @@
       <param name="Kd" value="0.0" />
       <param name="upper_limit" value="100" />
       <param name="lower_limit" value="-100" />
-      <param name="windup_limit" value="100" />
+      <param name="windup_limit" value="20" />
       <param name="max_loop_frequency" value="12.0" />
       <param name="min_loop_frequency" value="5.0" />
     </node>
@@ -16,7 +16,7 @@
       <param name="Kd" value="0.0" />
       <param name="upper_limit" value="100" />
       <param name="lower_limit" value="-100" />
-      <param name="windup_limit" value="100" />
+      <param name="windup_limit" value="20" />
       <param name="max_loop_frequency" value="12.0" />
       <param name="min_loop_frequency" value="5.0" />
     </node>
