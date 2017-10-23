@@ -1,7 +1,14 @@
 <launch>
-    <node name="stm" pkg="steward" type="stm_publisher.py" >
-    </node>
-    <node name="motors" pkg="steward" type="motors.py" >
-    </node>
-    
+    <node name="stm" pkg="steward" type="stm_publisher.py" />
+
+    <node name="camera" pkg="steward" type="camera_publisher.py" />
+
+    <node name="motors" pkg="steward" type="motors.py" />
+
+    <node name="logic" pkg="steward" type='path_planner.py'/>
+
+
+    <include  file="$(find steward)/launch/pids_for_wheels.launch" />
+
+
 </launch>
