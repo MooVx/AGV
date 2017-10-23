@@ -10,11 +10,18 @@ timeout = 0.3
 state = 'stop'
 
 cam_data = Camera()
+stm_data = STMdata()
 last_cam_cb = 0
+
+
 def cam_cb(data):
     global cam_data, last_cam_cb
     cam_data = data
     last_cam_cb = rospy.get_time()
+
+def is_area_clear():
+    global stm_data
+    return not stm_data.field1S
 
 def create_cmd_vel_from_cam(camera_data):
     k_th = 1.0
@@ -28,13 +35,13 @@ def create_cmd_vel_from_cam(camera_data):
 
 
 def stm_callback(data):
-    global state
-       
+    global state, stm_data
+
     if state == 'stop' and data.start_button:
         state = 'run'
     if data.safety_button:
         state = 'stop'
-
+    stm_data = data
 
 
 rospy.init_node("path_planner")
@@ -47,7 +54,7 @@ rate = rospy.Rate(10)
 while not rospy.is_shutdown():
 
     if state == 'run':
-        if rospy.get_time() - last_cam_cb < timeout:
+        if rospy.get_time() - last_cam_cb < timeout and is_area_clear():
             cmd_vel_pub.publish(create_cmd_vel_from_cam(cam_data))
         else:
             cmd_vel_pub.publish(Twist())
