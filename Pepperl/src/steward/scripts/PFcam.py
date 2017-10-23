@@ -61,7 +61,9 @@ class Pgv100:
             return self.read_from_bus(2) == [4, 4]
         elif color == 'green':
             self.send_req(128 + 8)
+            return self.read_from_bus(0)
             return self.read_from_bus(2) == [2, 2]
+
         elif color == 'blue':
             self.send_req(128 + 64 + 4)
             return self.read_from_bus(2) == [1, 1]
