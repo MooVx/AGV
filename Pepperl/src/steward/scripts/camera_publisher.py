@@ -19,7 +19,7 @@ while not cam.choose_color('green') or not cam.choose_dir('left'):
     sleep(1.0)
 
 
-
+last_cam_config = rospy.get_time()
 cam.read_from_bus(0)
 
 # This publisher will work as long as ROS
@@ -31,6 +31,12 @@ while not rospy.is_shutdown():
     msg.any_line = cam.any_lane
     msg.angle = int(cam.angle)
     msg.pos_y = cam.pos_y
+    if last_cam_config  - rospy.get_time() > 7.0:
+        while not cam.choose_color('green') or not cam.choose_dir('left'):
+            rospy.logwarn('cannot config camera!')
+            sleep(0.05)
+        last_cam_config = rospy.get_time()
+
 
     pub.publish(msg)
     rate.sleep()
