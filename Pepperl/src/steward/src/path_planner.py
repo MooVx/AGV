@@ -28,7 +28,7 @@ def create_cmd_vel_from_cam(camera_data):
     k_x = 0.2
     vel_msg = Twist()
     if camera_data.lanes > 0:
-        if (camera_data.angle > 0 and camera_data.pos_y < -20.0 ) or (camera_data.angle < 0 and camera_data.pos_y > 20.0):
+        if (camera_data.angle > 0 and camera_data.pos_y < -10.0 ) or (camera_data.angle < 0 and camera_data.pos_y > 10.0):
             vel_msg.linear.x = 0.0
         else:
             vel_msg.linear.x = 0.2
