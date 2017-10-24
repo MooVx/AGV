@@ -61,7 +61,7 @@ state = 'run'
 while not rospy.is_shutdown():
 
     if state == 'run':
-        if rospy.get_time() - last_cam_cb < timeout and is_area_clear():
+        if (rospy.get_time() - last_cam_cb < timeout) and is_area_clear():
             cmd_vel_pub.publish(create_cmd_vel_from_cam(cam_data))
         else:
             cmd_vel_pub.publish(Twist())
