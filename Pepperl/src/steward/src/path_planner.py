@@ -31,7 +31,7 @@ def create_cmd_vel_from_cam(camera_data):
         if (camera_data.angle > 0 and camera_data.pos_y < -20.0 ) or (camera_data.angle < 0 and camera_data.pos_y > 20.0):
             vel_msg.linear.x = 0.0
         else:
-            vel_msg.linear.x = 0.2
+            vel_msg.linear.x = 0.1
 
         if abs(camera_data.angle) < 30 or vel_msg.linear.x == 0.0:
             vel_msg.angular.z = -k_th * camera_data.pos_y/300.0
