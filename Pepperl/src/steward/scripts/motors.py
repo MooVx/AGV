@@ -35,6 +35,7 @@ def callback(data):
 def left_callback(data):
     global lm, last_safety_ok, timeout, stop_l_pub
     lm.wake_up()
+    last_safety_ok = rospy.get_time()
     if rospy.get_time() - last_safety_ok < timeout:
         stop_l_pub.publish(Bool(True))     
         lm.set_speed(int(data.data))
@@ -45,6 +46,8 @@ def left_callback(data):
 def right_callback(data):
     global rm, last_safety_ok, timeout, stop_r_pub
     rm.wake_up()
+
+    last_safety_ok = rospy.get_time()
     if rospy.get_time() - last_safety_ok < timeout:
         stop_r_pub.publish(Bool(True)) 
         rm.set_speed(int(data.data))
