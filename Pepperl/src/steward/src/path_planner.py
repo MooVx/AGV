@@ -24,7 +24,7 @@ def is_area_clear():
     return not stm_data.field1
 
 def create_cmd_vel_from_cam(camera_data):
-    k_th = 1.0
+    k_th = 0.5
     k_x = 0.2
     vel_msg = Twist()
     if camera_data.lanes > 0:
@@ -36,7 +36,7 @@ def create_cmd_vel_from_cam(camera_data):
         if vel_msg.linear.x == 0.0:
             vel_msg.angular.z = -k_th * camera_data.pos_y/500.0
         else:
-            vel_msg.angular.z  = (camera_data.angle/ 60.0 ) - camera_data.pos_y/200.0
+            vel_msg.angular.z  = 0.8 * (camera_data.angle/ 60.0 ) - 1.4 * camera_data.pos_y/200.0
         
     return vel_msg
 
