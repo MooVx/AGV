@@ -31,7 +31,7 @@ def create_cmd_vel_from_cam(camera_data):
         if (camera_data.angle > 0 and camera_data.pos_y < -25.0 ) or (camera_data.angle < 0 and camera_data.pos_y > 25.0):
             vel_msg.linear.x = 0.0
         else:
-            vel_msg.linear.x = 0.2
+            vel_msg.linear.x = 0.2 * (25.0 - abs(camera_data.pos_y)) / 25.0 
 
         if vel_msg.linear.x == 0.0:
             vel_msg.angular.z = -k_th * camera_data.pos_y/500.0
@@ -49,6 +49,7 @@ def stm_callback(data):
     if data.safety_button:
         state = 'stop'
     stm_data = data
+    print stm_data
 
 
 rospy.init_node("path_planner")
